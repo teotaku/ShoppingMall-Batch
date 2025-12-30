@@ -1,4 +1,4 @@
-create table produces(
+create table products(
 
  product_id varchar(255) primary key,
  seller_id bigint not null,
@@ -13,10 +13,10 @@ create table produces(
  stock_quantity integer default 0,
  created_at timestamp default current_timestamp,
  updated_at timestamp default current_timestamp
-)
+);
 
-create_index idx_products_product_status on products(product_status);
-create_index idx_products_category on  products(category);
-create_index idx_products_brand on products(brand );
-create_index idx_products_manufacturer on products(manufacturer);
-create_index idx_products_seller_id on products(seller_id);
+CREATE INDEX idx_products_product_status ON products(product_status);
+CREATE INDEX idx_products_category       ON products(category);
+CREATE INDEX idx_products_brand          ON products(brand);
+CREATE INDEX idx_products_manufacturer   ON products(manufacturer);
+CREATE INDEX idx_products_seller_id      ON products(seller_id);

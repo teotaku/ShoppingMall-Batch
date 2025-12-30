@@ -3,10 +3,15 @@ package shoppingmall.ecommerce.batch.domain.product;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+
+import ch.qos.logback.core.testUtil.RandomUtil;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import shoppingmall.ecommerce.batch.domain.dto.ProductUploadCsvRow;
+import shoppingmall.ecommerce.batch.domain.util.DateTimeUtils;
+import shoppingmall.ecommerce.batch.domain.util.RandomUtils;
 
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -16,12 +21,11 @@ public class Product {
   private String productId;
   private Long sellerId;
 
-
   private String category;
-  private String name;
+  private String productName;
   private LocalDate salesStartDate;
   private LocalDate salesEndDate;
-  private ProductStatus productStatus;
+  private String productStatus;
 
   private String brand;
   private String manufacturer;
@@ -32,4 +36,22 @@ public class Product {
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
 
+  public static Product from(ProductUploadCsvRow row) {
+    LocalDateTime now = LocalDateTime.now();
+    return new Product(
+            RandomUtils.generateRandomId(),
+            row.getSellerId(),
+            row.getCategory(),
+            row.getProductName(),
+            DateTimeUtils.toLocalDate(row.getSalesStartDate()),
+            DateTimeUtils.toLocalDate(row.getSalesEndDate()),
+            row.getProductStatus(),
+            row.getBrand(),
+            row.getManufacturer(),
+            row.getSalesPrice(),
+            row.getStockQuantity(),
+            now,
+            now
+    );
+  }
 }

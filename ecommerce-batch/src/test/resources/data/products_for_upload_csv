@@ -1,0 +1,7 @@
+sellerId,category,productName,salesStartDate,salesEndDate,productStatus,brand,manufacturer,salesPrice,stockQuantity
+78,서적,햇반,2020-10-09,2026-10-22,OUT_OF_STOCK,맥도날드,현대자동차,89294,902
+46,완구,셔츠,2022-07-14,2024-10-25,DISCONTINUED,롯데,스타벅스코리아,176604,244
+27,완구,소파,2023-02-12,2025-09-21,AVAILABLE,LG,도미노피자,10593,138
+93,가구,TV,2020-04-05,2026-11-02,DISCONTINUED,BMW,맥도날드코리아,257323,716
+7,완구,소설,2021-08-20,2026-11-25,DISCONTINUED,맥도날드,BMW코리아,259666,995
+35,완구,기타,2020-12-17,2024-10-23,DISCONTINUED,맥도날드,맥도날드코리아,472470,256
