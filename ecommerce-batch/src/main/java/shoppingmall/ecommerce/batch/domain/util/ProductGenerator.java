@@ -6,11 +6,11 @@ import org.apache.commons.csv.CSVPrinter;
 import shoppingmall.ecommerce.batch.domain.dto.ProductUploadCsvRow;
 import shoppingmall.ecommerce.batch.domain.product.ProductStatus;
 
-import java.time.LocalDate;
-import java.util.Random;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Random;
 
 
 public class ProductGenerator {
@@ -19,7 +19,7 @@ public class ProductGenerator {
 
     public static void main(String[] args) {
         String csvFilePath = "data/random_products.csv";
-        int recordCount = 10;
+        int recordCount = 1000;
 
         try (FileWriter out = new FileWriter(csvFilePath);
              CSVPrinter printer = new CSVPrinter(out, CSVFormat.DEFAULT.builder().setHeader(
